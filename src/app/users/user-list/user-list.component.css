@@ -1,0 +1,32 @@
+td, th {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+mat-header-cell, mat-cell {
+    justify-content: center;
+}
+
+th.mat-header-cell {
+    text-align: center !important;
+}
+
+td.mat-cell, th.mat-header-cell {
+    text-align: center;
+    justify-content:center;
+}
+
+.mat-sort-header-container {
+    justify-content: center !important;
+}
+
+table.mat-table {
+    table-layout: fixed;
+    width: 100%;
+    display: table;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+    display: flex;
+    justify-content: center;
+}

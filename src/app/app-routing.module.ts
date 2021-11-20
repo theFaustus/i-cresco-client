@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import { AuthGuard } from './core/guards/auth.guard';
+import {AuthGuard} from './core/guards/auth.guard';
+import {AdminGuard} from './core/guards/admin.guard';
 
 const appRoutes: Routes = [
     {
@@ -16,7 +17,12 @@ const appRoutes: Routes = [
     {
         path: 'users',
         loadChildren: './users/users.module#UsersModule',
-        canActivate: [AuthGuard]
+        canActivate: [AdminGuard]
+    },
+    {
+        path: 'books',
+        loadChildren: './books/books.module#BooksModule',
+        canActivate: [AdminGuard]
     },
     {
         path: 'account',
@@ -42,4 +48,5 @@ const appRoutes: Routes = [
     exports: [RouterModule],
     providers: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

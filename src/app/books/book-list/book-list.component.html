@@ -1,0 +1,61 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+    <div fxFlex="95%">
+
+        <mat-card>
+            <mat-card-content>
+                <h2>Books</h2>
+
+                <mat-form-field appearance="standard">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                </mat-form-field>
+
+                <table mat-table [dataSource]="dataSource" matSort>
+
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> id</th>
+                        <td mat-cell *matCellDef="let book"> {{book.id}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="title">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> title</th>
+                        <td mat-cell *matCellDef="let book"> {{book.title}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="author">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> author</th>
+                        <td mat-cell *matCellDef="let book"> {{book.author}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> description</th>
+                        <td mat-cell *matCellDef="let book"> {{book.description}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="created">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> created</th>
+                        <td mat-cell *matCellDef="let book"> {{book.created}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="user">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> user</th>
+                        <td mat-cell *matCellDef="let book"> {{book.userId}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="growthPlan">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> growth plan</th>
+                        <td mat-cell *matCellDef="let book"> {{book.growthPlanId}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Select page of books"></mat-paginator>
+
+            </mat-card-content>
+        </mat-card>
+
+
+    </div>
+</div>

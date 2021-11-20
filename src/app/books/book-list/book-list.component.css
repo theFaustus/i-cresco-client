@@ -10,9 +10,3 @@ td.mat-cell, th.mat-header-cell {
 
 }
 
-
-table.mat-table {
-    table-layout: fixed;
-    width: 100%;
-    display: table;
-}

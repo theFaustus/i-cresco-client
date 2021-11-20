@@ -5,6 +5,11 @@
       <mat-card-content>
         <h2>Users</h2>
 
+        <mat-form-field appearance="standard">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+
         <table mat-table [dataSource]="dataSource" matSort>
 
           <ng-container matColumnDef="id">
@@ -50,6 +55,8 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 
       </mat-card-content>
     </mat-card>

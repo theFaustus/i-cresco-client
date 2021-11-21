@@ -26,7 +26,6 @@ export class BookService {
                 return response._embedded.bookRecords as Book[];
             }));
     }
-
 }
 
 export interface PagedBookViewResponse {

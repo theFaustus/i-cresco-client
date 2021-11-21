@@ -29,6 +29,7 @@ export class AuthenticationService {
                 this.localStorage.setItem('currentUser', JSON.stringify({
                     token: user.accessToken,
                     isAdmin: user.authorities.includes('ROLE_POWER_USER'),
+                    roles: user.authorities,
                     username: user.username,
                     id: user.id,
                     alias: user.email.split('@')[0],

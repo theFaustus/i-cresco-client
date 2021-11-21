@@ -14,7 +14,7 @@ import {BookService} from '../../core/services/book.service';
     styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-    displayedColumns: string[] = ['id', 'title', 'author', 'description', 'created', 'user', 'growthPlan'];
+    displayedColumns: string[] = ['id', 'cover', 'title', 'author', 'description', 'created', 'pageCount', 'user', 'growthPlan'];
     dataSource;
 
     @ViewChild(MatSort, {static: true}) sort: MatSort;

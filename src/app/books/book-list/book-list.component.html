@@ -12,6 +12,13 @@
 
                 <table mat-table [dataSource]="dataSource" matSort>
 
+                    <ng-container matColumnDef="cover">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> cover</th>
+                        <td mat-cell *matCellDef="let book">
+                            <img src="{{book.thumbnail}}" alt="cover" width="80" style="border-radius: 5px;">
+                        </td>
+                    </ng-container>
+
                     <ng-container matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> id</th>
                         <td mat-cell *matCellDef="let book"> {{book.id}} </td>
@@ -35,6 +42,11 @@
                     <ng-container matColumnDef="created">
                         <th mat-header-cell *matHeaderCellDef mat-sort-header> created</th>
                         <td mat-cell *matCellDef="let book"> {{book.created}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="pageCount">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> pages</th>
+                        <td mat-cell *matCellDef="let book"> {{book.pageCount}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="user">

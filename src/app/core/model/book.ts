@@ -5,6 +5,8 @@ export interface Book {
     author: string;
     description: string;
     growthPlanId: string;
+    thumbnail: string;
+    pageCount: bigint;
     userId: string;
     created: Date;
 }
